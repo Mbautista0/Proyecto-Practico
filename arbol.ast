@@ -1,0 +1,136 @@
+{
+    "snake": {
+        "velocidad": {
+            "tick_ms": 110, 
+            "niveles": [
+                {
+                    "delta_ms": 0, 
+                    "hasta_puntaje": 50
+                }, 
+                {
+                    "delta_ms": 10, 
+                    "hasta_puntaje": 120
+                }, 
+                {
+                    "delta_ms": 20, 
+                    "hasta_puntaje": 250
+                }, 
+                {
+                    "delta_ms": 30, 
+                    "hasta_puntaje": 500
+                }
+            ]
+        }, 
+        "puntuacion": {
+            "por_tiempo": {
+                "puntos": 5, 
+                "cada_ticks": 100
+            }, 
+            "por_comida": 10, 
+            "por_comida_especial": 50, 
+            "combo": {
+                "activo": true, 
+                "ventana_ticks": 30, 
+                "tabla": {
+                    "3": 12, 
+                    "2": 5, 
+                    "4": 20
+                }
+            }
+        }, 
+        "controles": {
+            "izquierda": "A", 
+            "pausar": "P", 
+            "arriba": "W", 
+            "abajo": "S", 
+            "derecha": "D"
+        }, 
+        "interfaz": {
+            "mostrar_nivel": true, 
+            "mostrar_puntaje": true, 
+            "mostrar_velocidad": true
+        }, 
+        "rejilla": {
+            "alto": 20, 
+            "envolvente": false, 
+            "celdas_obstaculo": [
+                {
+                    "y": 10, 
+                    "x": 10
+                }, 
+                {
+                    "y": 10, 
+                    "x": 11
+                }, 
+                {
+                    "y": 10, 
+                    "x": 12
+                }, 
+                {
+                    "y": 6, 
+                    "x": 5
+                }, 
+                {
+                    "y": 7, 
+                    "x": 5
+                }, 
+                {
+                    "y": 8, 
+                    "x": 5
+                }
+            ], 
+            "ancho": 28
+        }, 
+        "colores": {
+            "fondo": "#000000", 
+            "serpiente": "#00FF00", 
+            "comida": "#FF0000", 
+            "cabeza": "#66FF66", 
+            "obstaculo": "#505050", 
+            "skins": [
+                {
+                    "segmentos": [
+                        "#00AA00", 
+                        "#00DD00", 
+                        "#00FF00"
+                    ], 
+                    "nombre": "clasic"
+                }, 
+                {
+                    "segmentos": [
+                        "#00FFAA", 
+                        "#00FFFF", 
+                        "#AAFF00"
+                    ], 
+                    "nombre": "neon"
+                }
+            ]
+        }, 
+        "audio": {
+            "pausa": "pause.wav", 
+            "choque": "boom.wav", 
+            "comer": "eat.wav"
+        }, 
+        "reglas": {
+            "largo_inicial": 4, 
+            "crecer_en": 1, 
+            "colision_obstaculo_termina": true, 
+            "colision_cuerpo_termina": true, 
+            "comida_multiple": false, 
+            "comida_especial": [
+                {
+                    "color": "#FFD700", 
+                    "cada": 5, 
+                    "duracion_ticks": 50, 
+                    "valor": 25
+                }, 
+                {
+                    "color": "#FF69B4", 
+                    "cada": 10, 
+                    "duracion_ticks": 80, 
+                    "valor": 60
+                }
+            ]
+        }
+    }
+}
