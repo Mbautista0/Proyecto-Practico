@@ -1,0 +1,70 @@
+# Snake 
+juego "snake" {
+  rejilla {
+    ancho = 28
+    alto = 20
+    envolvente = falso
+    celdas_obstaculo = [
+      { x: 10, y: 10 }, { x: 11, y: 10 }, { x: 12, y: 10 },
+      { x: 5, y: 6 }, { x: 5, y: 7 }, { x: 5, y: 8 }
+    ]
+  }
+
+  colores {
+    fondo = "#000000"
+    serpiente = "#00FF00"
+    cabeza = "#66FF66"
+    comida = "#FF0000"
+    obstaculo = "#505050"
+    skins = [
+      { nombre: "clasic", segmentos: ["#00AA00", "#00DD00", "#00FF00"] },
+      { nombre: "neon", segmentos: ["#00FFAA", "#00FFFF", "#AAFF00"] }
+    ]
+  }
+
+  velocidad {
+    tick_ms = 110
+    niveles = [
+      { hasta_puntaje: 50, delta_ms: 0 },
+      { hasta_puntaje: 120, delta_ms: 10 },
+      { hasta_puntaje: 250, delta_ms: 20 },
+      { hasta_puntaje: 500, delta_ms: 30 }
+    ]
+  }
+
+  reglas {
+    largo_inicial = 4
+    crecer_en = 1
+    colision_cuerpo_termina = verdadero
+    colision_obstaculo_termina = verdadero
+    comida_multiple = falso
+    comida_especial = [
+      { cada: 5, duracion_ticks: 50, valor: 25, color: "#FFD700" },
+      { cada: 10, duracion_ticks: 80, valor: 60, color: "#FF69B4" }
+    ]
+  }
+
+  controles {
+    arriba = "W"
+    abajo = "S"
+    izquierda = "A"
+    derecha = "D"
+    pausar = "P"
+  }
+
+  puntuacion {
+    por_comida = 10
+    por_comida_especial = 50
+    por_tiempo = { cada_ticks: 100, puntos: 5 }
+    combo = {
+      activo = verdadero
+      ventana_ticks = 30
+      tabla = { "2": 5, "3": 12, "4": 20 }
+    }
+  }
+
+  interfaz {
+    mostrar_puntaje = verdadero
+    mostrar_nivel = verdadero
+    mostrar_velocidad = verdadero
+  }
