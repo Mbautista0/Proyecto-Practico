@@ -1,0 +1,71 @@
+# Tetris completo y detallado
+juego "tetris" {
+  rejilla {
+    ancho = 10
+    alto = 22
+    filas_ocultas = 2
+    fondo = "#101018"
+    borde = "#3A3A46"
+  }
+
+  velocidad {
+    gravedad_ms = 700
+    por_n_lineas_subir_nivel = 10
+    niveles = [
+      { nivel : 2, delta_ms : 80 },
+      { nivel : 3, delta_ms : 70 },
+      { nivel : 4, delta_ms : 60 },
+      { nivel : 5, delta_ms : 60 },
+      { nivel : 6, delta_ms : 50 },
+      { nivel : 7, delta_ms : 50 },
+      { nivel : 8, delta_ms : 40 },
+      { nivel : 9, delta_ms : 40 },
+      { nivel : 10, delta_ms : 30 }
+    ]
+    soft_drop_ms = 40
+    lock_delay_ms = 500
+  }
+
+  reglas {
+    usar_estandar = verdadero
+    hold = verdadero
+    preview = 5
+    topout_termina = verdadero
+    randomizador = "bolsa7"
+  }
+
+  puntuacion {
+    por_linea = { "1" : 100, "2" : 300, "3" : 500, "4" : 800 }
+    nivel_multiplicador = 1
+    soft_drop = 1
+    hard_drop = 2
+    combo = { activo : verdadero, base : 25, extra_por_cadena : 10 }
+    back_to_back = { activo : verdadero, bonus : 50 }
+  }
+
+  piezas {
+    colores = { "I" : "#00FFFF", "O" : "#FFFF00", "T" : "#AA00FF", "S" : "#00FF00", "Z" : "#FF0000", "J" : "#0000FF", "L" : "#FFA500" }
+    personalizadas = [
+      { nombre : "P", color : "#FF66CC" },
+      { nombre : "U", color : "#66FF99" }
+    ]
+  }
+
+  controles {
+    izquierda = "A"
+    derecha = "D"
+    bajar = "S"
+    rotar_horario = "K"
+    rotar_antihorario = "J"
+    caer_duro = "Espacio"
+    hold = "L"
+    pausar = "P"
+  }
+
+  interfaz {
+    mostrar_puntaje = verdadero
+    mostrar_nivel = verdadero
+    mostrar_preview = verdadero
+    mostrar_hold = verdadero
+  }
+}
