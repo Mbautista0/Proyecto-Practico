@@ -421,7 +421,7 @@ def save_ast_to_file(ast, ast_file_path):
 # ZONA DE EJECUCION
 # ============================================================
 
-file_path = "snake_full.brik"   # o "tetris_full.brik"
+file_path = "snake.brik"   # o "tetris.brik"
 ast_file_path = "arbol.ast"
 
 source_code = load_file_content(file_path)
